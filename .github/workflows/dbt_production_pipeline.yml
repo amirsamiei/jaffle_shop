@@ -3,7 +3,7 @@ name: dbt_production_pipeline
 # 1. Choose when this job should automatically execute
 on:
   schedule:
-    - cron: "0 2 * * *" # Executes automatically every night at 2:00 AM UTC
+    - cron: "40 15 * * *" # Executes automatically every night at 15:40 AM UTC
   push:
     branches:
       - main # Also triggers an immediate production build if code changes are merged to main
