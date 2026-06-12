@@ -8,6 +8,9 @@ on:
     branches:
       - main # Also triggers an immediate production build if code changes are merged to main
 
+env:
+  DBT_PROFILES_DIR: .
+
 jobs:
   run_production_pipeline:
     runs-on: ubuntu-latest # Launches an isolated, temporary Linux server machine
