@@ -1,0 +1,11 @@
+models:
+    - name: fct_orders
+      columns:
+          - name: order_id
+            data_tests:
+                - relationships:
+                      config:
+                          severity: warn
+                      arguments:
+                          to: ref('stg_jaffle_shop__orders')
+                          field: order_id

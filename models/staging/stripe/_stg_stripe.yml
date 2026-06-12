@@ -1,0 +1,18 @@
+models:
+  - name: stg_stripe__payments
+    description: Staged payment data from our Stripe source.
+    columns:
+      - name: id
+        description: The primary key for payments.
+      - name: order_id
+        description: The order ID associated with the payment.
+      - name: payment_method
+        description: The method of payment used.
+      - name: status
+        description: "doc('payment_status')"
+      - name: amount
+        description: The amount of the payment in cents.
+      - name: created
+        description: The timestamp when the payment was created.
+      - name: _batched_at
+        description: The timestamp when the record was processed in database.
