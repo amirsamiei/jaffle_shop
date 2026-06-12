@@ -33,9 +33,12 @@ jobs:
 
       # Step 4: Extract the encrypted JSON credentials out of your safe repository secret space
       # and drop it temporarily into the runner execution path root directory
+      # Step 4: Extract credentials cleanly using an isolated environment block
       - name: Inject Warehouse Service Account Key
+        env:
+          RAW_JSON_KEY: ${{ secrets.GCP_SA_KEY }} # Safely binds the multi-line payload
         run: |
-          echo "${{ secrets.GCP_SA_KEY }}" > gcp-sa-key.json
+          echo "$RAW_JSON_KEY" > gcp-sa-key.json   # Writes the text with all internal quotes intact
 
       # Step 5: Execute the consolidated pipeline build sequence
       # We force target 'prod' so dbt bypasses dev sandboxes and updates production tables!
