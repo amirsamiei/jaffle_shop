@@ -1,4 +1,4 @@
-# profiles.yml (Saved in your main repository root folder)
+# profiles.yml (Saved in the main repository root folder)
 default:
   target: prod
   outputs:
