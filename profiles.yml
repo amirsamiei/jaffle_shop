@@ -1,0 +1,12 @@
+# profiles.yml (Saved in your main repository root folder)
+default:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account
+      project: jaffle-shop-498514
+      dataset: prod_marts_jaffle_shop
+      keyfile: ./gcp-sa-key.json # Points perfectly to the key dropped by GitHub Actions
+      location: US
+      threads: 16
